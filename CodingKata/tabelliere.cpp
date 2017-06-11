@@ -8,9 +8,25 @@ using namespace std;
 using namespace boost::lambda;
 using namespace boost;
 
-vector<vector<string>*> parse(vector<string> zeilen)
+
+vector<string> ParsedTable::getResult()
 {
-	vector<vector<string>*> result {};
+	vector<string> result;
+
+	int index = 0;
+	for (auto it = rows.begin(); it != rows.end(); it++, index++)
+	{
+		result.push_back(formatRow(**it));
+
+		if (index == 0)
+			result.push_back(separateHeader());
+	}
+
+	return result;
+}
+ParsedTable::ParsedTable(vector<string> zeilen)
+{
+	// parse into cells
 	char_separator<wchar_t> separator{ L";" };
 
 	for (auto it = zeilen.begin(); it < zeilen.end(); it++) 
@@ -23,31 +39,23 @@ vector<vector<string>*> parse(vector<string> zeilen)
 			(*row).push_back(*token);
 		}
 
-		result.push_back(row);
+		rows.push_back(row);
 	}
 
-	return result;
-}
-
-vector<size_t> calculateColumnWidths(vector<vector<string>*> tabelle)
-{
-	vector<size_t> result;
-
-	for (auto row = tabelle.begin(); row < tabelle.end(); row++) 
+	// calculate column widths
+	for (auto row = rows.begin(); row < rows.end(); row++)
 	{
 		size_t i = 0;
-		for (auto column = (**row).begin(); column != (**row).end(); i++, column++)
+		for (auto column = (*row)->begin(); column != (*row)->end(); i++, column++)
 		{
-			while (i >= result.size()) result.push_back(0);
+			while (i >= columnWidth.size()) columnWidth.push_back(0);
 
-			result[i] = max(result[i], (*column).size());
+			columnWidth[i] = max(columnWidth[i], (*column).size());
 		}
 	}
-
-	return result;
 }
 
-string formatRow(vector<string> data, vector<size_t> columnWidth)
+string ParsedTable::formatRow(vector<string> data)
 {
 	string result("");
 	int i = 0;
@@ -63,7 +71,7 @@ string formatRow(vector<string> data, vector<size_t> columnWidth)
 	return result;
 }
 
-string separateHeader(vector<size_t> columnWidth)
+string ParsedTable::separateHeader()
 {
 	string result("");
 
@@ -77,23 +85,8 @@ string separateHeader(vector<size_t> columnWidth)
 	return result;
 }
 
-CODINGKATA_API vector<string> tabelliere(vector<string> zeilen)
+ParsedTable::~ParsedTable()
 {
-	vector<vector<string>*> tabelle = parse(zeilen);
-	vector<size_t> columnWidth = calculateColumnWidths(tabelle);
-
-	vector<string> result;
-
-	int index = 0;
-	for (auto it = tabelle.begin(); it != tabelle.end(); it++, index++)
-	{
-		result.push_back(formatRow(**it, columnWidth));
-
-		if (index == 0)
-			result.push_back(separateHeader(columnWidth));
-	}
-
-	for (auto it = tabelle.begin(); it != tabelle.end(); it++) delete *it;
-
-	return result;
+	for (auto it = rows.begin(); it < rows.end(); it++)
+		delete *it;
 }

@@ -10,4 +10,18 @@
 #define CODINGKATA_API __declspec(dllimport)
 #endif
 
-CODINGKATA_API std::vector<std::string> tabelliere(std::vector<std::string>);
+using namespace std;
+
+class CODINGKATA_API ParsedTable
+{
+private:
+	vector<vector<string>*> rows;
+	vector<size_t> columnWidth;
+	string separateHeader();
+	string formatRow(vector<string>);
+public:
+	ParsedTable(vector<string>);
+	~ParsedTable();
+
+	vector<string> getResult();
+};

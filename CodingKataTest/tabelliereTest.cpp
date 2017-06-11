@@ -11,10 +11,24 @@ namespace CodingKataTest
 	{
 	public:
 		
-		TEST_METHOD(HeaderOnlyIsCorrect)
+		TEST_METHOD(HeaderOnly)
 		{
 			Assert::AreEqual(string("Name|Strasse|Ort|Alter|"), tabelliere(vector<string> {"Name;Strasse;Ort;Alter"})[0]);
 		}
 
+		TEST_METHOD(CompleteTable)
+		{
+			auto result = tabelliere(vector<string> 
+				{"Name;Strasse;Ort;Alter",
+				"Peter Pan;Am Hang 5;12345 Einsam;42",
+				"Maria Schmitz;Kölner Straße 45;50123 Köln;43",
+				"Paul Meier;Münchener Weg 1;87654 München;65"});
+
+			Assert::AreEqual(string("Name         |Strasse         |Ort          |Alter|"), result[0]);
+			Assert::AreEqual(string("-------------+----------------+-------------+-----+"), result[1]);
+			Assert::AreEqual(string("Peter Pan    |Am Hang 5       |12345 Einsam |42   |"), result[2]);
+			Assert::AreEqual(string("Maria Schmitz|Kölner Straße 45|50123 Köln   |43   |"), result[3]);
+			Assert::AreEqual(string("Paul Meier   |Münchener Weg 1 |87654 München|65   |"), result[4]);
+		}
 	};
 }

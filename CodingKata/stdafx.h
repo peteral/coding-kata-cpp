@@ -16,3 +16,8 @@
 // TODO: reference additional headers your program requires here
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <iterator>
+#include <boost\lambda\lambda.hpp>
+#include <boost/tokenizer.hpp>
+#include <memory>

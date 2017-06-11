@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodingKata", "CodingKata\CodingKata.vcxproj", "{BBD1503F-9F51-423E-B933-8A3B94DCEC87}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodingKataTest", "CodingKataTest\CodingKataTest.vcxproj", "{9DB9C55B-0480-4081-B479-BD9E51B444D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{BBD1503F-9F51-423E-B933-8A3B94DCEC87}.Release|x64.Build.0 = Release|x64
 		{BBD1503F-9F51-423E-B933-8A3B94DCEC87}.Release|x86.ActiveCfg = Release|Win32
 		{BBD1503F-9F51-423E-B933-8A3B94DCEC87}.Release|x86.Build.0 = Release|Win32
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Debug|x64.ActiveCfg = Debug|x64
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Debug|x64.Build.0 = Debug|x64
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Debug|x86.ActiveCfg = Debug|Win32
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Debug|x86.Build.0 = Debug|Win32
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Release|x64.ActiveCfg = Release|x64
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Release|x64.Build.0 = Release|x64
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Release|x86.ActiveCfg = Release|Win32
+		{9DB9C55B-0480-4081-B479-BD9E51B444D3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

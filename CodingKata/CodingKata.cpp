@@ -8,5 +8,5 @@ using namespace std;
 
 CODINGKATA_API vector<string> tabelliere(vector<string>)
 {
-	return vector<string>();
+	return vector<string>{""};
 }

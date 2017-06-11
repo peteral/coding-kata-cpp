@@ -67,6 +67,7 @@ string separateHeader(vector<size_t> columnWidth)
 {
 	string result("");
 
+	// TODO - builder?
 	for (auto it = columnWidth.begin(); it != columnWidth.end(); it++) {
 		for (size_t i = 0; i < *it; i++)
 			result += "-";
@@ -93,6 +94,8 @@ CODINGKATA_API vector<string> tabelliere(vector<string> zeilen)
 			result.push_back(separateHeader(columnWidth));
 	}
 
+	// TODO - look for better way to cleanup
+	for (auto it = tabelle.begin(); it != tabelle.end(); it++) delete *it;
 
 	return result;
 }

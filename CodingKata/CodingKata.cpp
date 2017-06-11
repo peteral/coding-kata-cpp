@@ -63,6 +63,20 @@ string formatRow(vector<string> data, vector<size_t> columnWidth)
 	return result;
 }
 
+string separateHeader(vector<size_t> columnWidth)
+{
+	string result("");
+
+	for (auto it = columnWidth.begin(); it != columnWidth.end(); it++) {
+		for (size_t i = 0; i < *it; i++)
+			result += "-";
+
+		result += "+";
+	}
+
+	return result;
+}
+
 CODINGKATA_API vector<string> tabelliere(vector<string> zeilen)
 {
 	vector<vector<string>*> tabelle = parse(zeilen);
@@ -70,10 +84,15 @@ CODINGKATA_API vector<string> tabelliere(vector<string> zeilen)
 
 	vector<string> result;
 
-	for (auto it = tabelle.begin(); it != tabelle.end(); it++)
+	int index = 0;
+	for (auto it = tabelle.begin(); it != tabelle.end(); it++, index++)
 	{
 		result.push_back(formatRow(**it, columnWidth));
+
+		if (index == 0)
+			result.push_back(separateHeader(columnWidth));
 	}
+
 
 	return result;
 }

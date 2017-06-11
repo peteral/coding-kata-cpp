@@ -7,6 +7,7 @@ using namespace std;
 
 namespace CodingKataTest
 {		
+	// Coding Cata: http://ccd-school.de/coding-dojo/function-katas/csv-tabellieren/
 	TEST_CLASS(TabelliereTest)
 	{
 	public:

@@ -5,7 +5,6 @@
 #include "CodingKata.h"
 
 using namespace std;
-using namespace boost::lambda;
 using namespace boost;
 
 
@@ -35,9 +34,7 @@ ParsedTable::ParsedTable(vector<string> zeilen)
 		
 		tokenizer<char_separator<wchar_t>> tok(*it, separator);
 		for (auto token = tok.begin(); token != tok.end(); token++)
-		{
 			(*row).push_back(*token);
-		}
 
 		rows.push_back(row);
 	}
@@ -48,9 +45,10 @@ ParsedTable::ParsedTable(vector<string> zeilen)
 		size_t i = 0;
 		for (auto column = (*row)->begin(); column != (*row)->end(); i++, column++)
 		{
-			while (i >= columnWidth.size()) columnWidth.push_back(0);
+			while (i >= columnWidth.size()) 
+				columnWidth.push_back(0);
 
-			columnWidth[i] = max(columnWidth[i], (*column).size());
+			columnWidth[i] = max(columnWidth[i], column->size());
 		}
 	}
 }
@@ -61,9 +59,9 @@ string ParsedTable::formatRow(vector<string> data)
 	int i = 0;
 	for (auto cell = data.begin(); cell != data.end(); cell++, i++) {
 		string formattedCell(*cell);
-		auto width = columnWidth[i];
 
-		while (formattedCell.size() < width) formattedCell += " ";
+		while (formattedCell.size() < columnWidth[i]) 
+			formattedCell += " ";
 
 		result += formattedCell + "|";
 	}

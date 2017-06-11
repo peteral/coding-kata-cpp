@@ -4,19 +4,9 @@
 #include "stdafx.h"
 #include "CodingKata.h"
 
+using namespace std;
 
-// This is an example of an exported variable
-CODINGKATA_API int nCodingKata=0;
-
-// This is an example of an exported function.
-CODINGKATA_API int fnCodingKata(void)
+CODINGKATA_API vector<string> tabelliere(vector<string>)
 {
-    return 42;
-}
-
-// This is the constructor of a class that has been exported.
-// see CodingKata.h for the class definition
-CCodingKata::CCodingKata()
-{
-    return;
+	return vector<string>();
 }

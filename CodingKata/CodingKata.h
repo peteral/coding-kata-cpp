@@ -10,13 +10,4 @@
 #define CODINGKATA_API __declspec(dllimport)
 #endif
 
-// This class is exported from the CodingKata.dll
-class CODINGKATA_API CCodingKata {
-public:
-	CCodingKata(void);
-	// TODO: add your methods here.
-};
-
-extern CODINGKATA_API int nCodingKata;
-
-CODINGKATA_API int fnCodingKata(void);
+CODINGKATA_API std::vector<std::string> tabelliere(std::vector<std::string>);

@@ -5,7 +5,6 @@
 #include "CodingKata.h"
 
 using namespace std;
-using namespace boost::lambda;
 using namespace boost;
 
 

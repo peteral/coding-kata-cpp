@@ -25,3 +25,5 @@ public:
 
 	vector<string> getResult();
 };
+
+vector<string> CODINGKATA_API fizzBuzz();

@@ -8,32 +8,38 @@ using namespace std;
 namespace CodingKataTest
 {		
 	// Coding Cata: http://ccd-school.de/coding-dojo/function-katas/csv-tabellieren/
-	TEST_CLASS(TabelliereTest)
+	TEST_CLASS(FizzBuzzTest)
 	{
 	public:
 		
-		TEST_METHOD(HeaderOnly)
+		TEST_METHOD(Returns100Entries)
 		{
-			ParsedTable table({"Name;Strasse;Ort;Alter"});
-
-			Assert::AreEqual(string("Name|Strasse|Ort|Alter|"), table.getResult()[0]);
+			Assert::AreEqual((size_t)100, fizzBuzz().size());
 		}
 
-		TEST_METHOD(CompleteTable)
+		TEST_METHOD(Entry3IsFizz)
 		{
-			ParsedTable table(
-				{"Name;Strasse;Ort;Alter",
-				"Peter Pan;Am Hang 5;12345 Einsam;42",
-				"Maria Schmitz;Kölner Straße 45;50123 Köln;43",
-				"Paul Meier;Münchener Weg 1;87654 München;65"});
+			Assert::AreEqual(string("Fizz"), fizzBuzz()[2]);
+		}
 
-			auto result = table.getResult();
+		TEST_METHOD(Entry6IsFizz)
+		{
+			Assert::AreEqual(string("Fizz"), fizzBuzz()[5]);
+		}
 
-			Assert::AreEqual(string("Name         |Strasse         |Ort          |Alter|"), result[0]);
-			Assert::AreEqual(string("-------------+----------------+-------------+-----+"), result[1]);
-			Assert::AreEqual(string("Peter Pan    |Am Hang 5       |12345 Einsam |42   |"), result[2]);
-			Assert::AreEqual(string("Maria Schmitz|Kölner Straße 45|50123 Köln   |43   |"), result[3]);
-			Assert::AreEqual(string("Paul Meier   |Münchener Weg 1 |87654 München|65   |"), result[4]);
+		TEST_METHOD(Entry5IsBuzz)
+		{
+			Assert::AreEqual(string("Buzz"), fizzBuzz()[4]);
+		}
+
+		TEST_METHOD(Entry10IsBuzz)
+		{
+			Assert::AreEqual(string("Buzz"), fizzBuzz()[9]);
+		}
+
+		TEST_METHOD(Entry15IsFizzBuzz)
+		{
+			Assert::AreEqual(string("FizzBuzz"), fizzBuzz()[14]);
 		}
 	};
 }

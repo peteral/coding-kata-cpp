@@ -1,6 +1,7 @@
       
 #include "stdafx.h"
 #include "..\CodingKata\CodingKata.h"
+#include <iostream>
 
 BOOST_AUTO_TEST_CASE(HeaderOnly)
 {

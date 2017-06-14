@@ -1,6 +1,8 @@
 // stdafx.cpp : source file that includes just the standard includes
-// CodingKataTest.pch will be the pre-compiled header
+// Boost Unit Test Project.pch will be the pre-compiled header
 // stdafx.obj will contain the pre-compiled type information
+
+#define BOOST_TEST_MODULE CodingKataBoostTest
 
 #include "stdafx.h"
 

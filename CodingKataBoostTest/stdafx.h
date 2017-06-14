@@ -5,11 +5,14 @@
 
 #pragma once
 
-#include "targetver.h"
+#ifdef _WIN32
+    #include "targetver.h"
+#endif
 
-// Headers for CppUnitTest
-#include "CppUnitTest.h"
+#include <stdio.h>
+
 
 // TODO: reference additional headers your program requires here
-#include <string>
-#include <vector>
+
+//Adding required boost header
+#include <boost/test/unit_test.hpp>

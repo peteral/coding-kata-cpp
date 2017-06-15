@@ -16,22 +16,22 @@ class CODINGKATA_API ParsedTable
 {
 private:
 	vector<vector<string>*> rows;
-	vector<size_t> columnWidth;
-	string separateHeader();
-	string formatRow(vector<string>);
+	vector<size_t> column_width;
+	string SeparateHeader();
+	string FormatRow(const vector<string>);
 public:
-	ParsedTable(vector<string>);
+	ParsedTable(const vector<string>);
 	~ParsedTable();
 
-	vector<string> getResult();
+	vector<string> GetResult();
 };
 
-vector<string> CODINGKATA_API fizzBuzz();
+vector<string> CODINGKATA_API FizzBuzz();
 
-class CODINGKATA_API roman_exception {
+class CODINGKATA_API RomanException {
 public:
-	roman_exception(string m) { message = m; };
+	RomanException(const string m) { message = m; };
 	string message;
 };
 
-int CODINGKATA_API fromRomanNumerals(string roman);
+int CODINGKATA_API FromRomanNumerals(const string roman);

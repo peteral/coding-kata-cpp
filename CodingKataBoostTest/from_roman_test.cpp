@@ -1,6 +1,6 @@
       
 #include "stdafx.h"
-#include "..\CodingKata\CodingKata.h"
+#include "..\CodingKata\coding_kata.h"
 
 using namespace std;
 
@@ -10,9 +10,9 @@ namespace roman {
 	typedef struct {
 		int arabic;
 		string roman;
-	} dataset_entry;
+	} DatasetEntries;
 
-	vector<dataset_entry> entries{
+	vector<DatasetEntries> entries{
 		{ 1, "I" },
 		{ 2, "II" },
 		{ 4, "IV" },
@@ -27,10 +27,10 @@ namespace roman {
 		bdata::xrange(entries.size()),
 		index)
 	{
-		BOOST_TEST(entries[index].arabic == fromRomanNumerals(entries[index].roman));
+		BOOST_TEST(entries[index].arabic == FromRomanNumerals(entries[index].roman));
 	}
 
-	bool correctSyntaxErrorMessage(const roman_exception& ex)
+	bool CorrectSyntaxErrorMessage(const RomanException& ex)
 	{
 		BOOST_CHECK_EQUAL(ex.message, "Invalid character: [ ]");
 		return true;
@@ -38,10 +38,10 @@ namespace roman {
 
 	BOOST_AUTO_TEST_CASE(SyntaxError)
 	{
-		BOOST_CHECK_EXCEPTION(fromRomanNumerals("I X"), roman_exception, correctSyntaxErrorMessage);
+		BOOST_CHECK_EXCEPTION(FromRomanNumerals("I X"), RomanException, CorrectSyntaxErrorMessage);
 	}
 
-	bool correctSemanticsErrorMessage(const roman_exception& ex)
+	bool CorrectSemanticsErrorMessage(const RomanException& ex)
 	{
 		BOOST_CHECK_EQUAL(ex.message, "Invalid character [C] before [I]");
 		return true;
@@ -49,6 +49,6 @@ namespace roman {
 
 	BOOST_AUTO_TEST_CASE(SemanticsError)
 	{
-		BOOST_CHECK_EXCEPTION(fromRomanNumerals("IC"), roman_exception, correctSemanticsErrorMessage);
+		BOOST_CHECK_EXCEPTION(FromRomanNumerals("IC"), RomanException, CorrectSemanticsErrorMessage);
 	}
 }

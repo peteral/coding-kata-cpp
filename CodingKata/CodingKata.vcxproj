@@ -146,13 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CodingKata.h" />
+    <ClInclude Include="coding_kata.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fizzBuzz.cpp" />
-    <ClCompile Include="fromRoman.cpp" />
+    <ClCompile Include="fizz_buzz.cpp" />
+    <ClCompile Include="from_roman.cpp" />
     <ClCompile Include="tabelliere.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>

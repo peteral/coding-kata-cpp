@@ -1,13 +1,13 @@
       
 #include "stdafx.h"
-#include "..\CodingKata\CodingKata.h"
+#include "..\CodingKata\coding_kata.h"
 #include <iostream>
 
 BOOST_AUTO_TEST_CASE(HeaderOnly)
 {
 	ParsedTable table({ "Name;Strasse;Ort;Alter" });
 
-	BOOST_REQUIRE(string("Name|Strasse|Ort|Alter|") == table.getResult()[0]);
+	BOOST_REQUIRE(string("Name|Strasse|Ort|Alter|") == table.GetResult()[0]);
 }
 
 BOOST_AUTO_TEST_CASE(CompleteTable)
@@ -18,7 +18,7 @@ BOOST_AUTO_TEST_CASE(CompleteTable)
 		"Maria Schmitz;Kölner Straße 45;50123 Köln;43",
 		"Paul Meier;Münchener Weg 1;87654 München;65" });
 
-	auto result = table.getResult();
+	auto result = table.GetResult();
 
 	BOOST_REQUIRE(string("Name         |Strasse         |Ort          |Alter|") == result[0]);
 	BOOST_REQUIRE(string("-------------+----------------+-------------+-----+") == result[1]);

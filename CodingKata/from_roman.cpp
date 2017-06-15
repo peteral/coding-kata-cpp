@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "CodingKata.h"
+#include "coding_kata.h"
 
 using namespace std;
 
@@ -23,7 +23,7 @@ map<char, set<char>> valid_predecessors = {
 	{ 'M', { 'C', 'M' } },
 };
 
-bool romanIsAddition(string::iterator it, string::iterator end)
+bool RomanIsAddition(const string::const_iterator it, const string::const_iterator end)
 {
 	bool addition = true;
 
@@ -37,18 +37,18 @@ bool romanIsAddition(string::iterator it, string::iterator end)
 	return addition;
 }
 
-void assertValidSyntax(string::iterator it)
+void AssertValidSyntax(const string::const_iterator it)
 {
 	if (roman_literals.count(*it) == 0) {
 		string message = "Invalid character: [";
 		message += *it;
 		message += "]";
 
-		throw roman_exception(message);
+		throw RomanException(message);
 	}
 }
 
-void assertValidSemantics(string::iterator it, string::iterator first)
+void AssertValidSemantics(const string::const_iterator it, const string::const_iterator first)
 {
 	if (it == first) return;
 
@@ -60,19 +60,19 @@ void assertValidSemantics(string::iterator it, string::iterator first)
 		message += *(it - 1);
 		message += "]";
 
-		throw roman_exception(message);
+		throw RomanException(message);
 	}
 }
 
-int CODINGKATA_API fromRomanNumerals(string roman)
+int CODINGKATA_API FromRomanNumerals(const string roman)
 {
 	int result = 0;
 
 	for (auto it = roman.begin(); it != roman.end(); it++) {
-		assertValidSyntax(it);
-		assertValidSemantics(it, roman.begin());
+		AssertValidSyntax(it);
+		AssertValidSemantics(it, roman.begin());
 
-		if (romanIsAddition(it, roman.end()))
+		if (RomanIsAddition(it, roman.end()))
 			result += roman_literals[*it];
 		else
 			result -= roman_literals[*it];

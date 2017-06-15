@@ -2,28 +2,28 @@
 //
 
 #include "stdafx.h"
-#include "CodingKata.h"
+#include "coding_kata.h"
 
 using namespace std;
 using namespace boost;
 
 
-vector<string> ParsedTable::getResult()
+vector<string> ParsedTable::GetResult()
 {
 	vector<string> result;
 
 	int index = 0;
 	for (auto it = rows.begin(); it != rows.end(); it++, index++)
 	{
-		result.push_back(formatRow(**it));
+		result.push_back(FormatRow(**it));
 
 		if (index == 0)
-			result.push_back(separateHeader());
+			result.push_back(SeparateHeader());
 	}
 
 	return result;
 }
-ParsedTable::ParsedTable(vector<string> zeilen)
+ParsedTable::ParsedTable(const vector<string> zeilen)
 {
 	// parse into cells
 	char_separator<wchar_t> separator{ L";" };
@@ -45,22 +45,22 @@ ParsedTable::ParsedTable(vector<string> zeilen)
 		size_t i = 0;
 		for (auto column = (*row)->begin(); column != (*row)->end(); i++, column++)
 		{
-			while (i >= columnWidth.size()) 
-				columnWidth.push_back(0);
+			while (i >= column_width.size()) 
+				column_width.push_back(0);
 
-			columnWidth[i] = max(columnWidth[i], column->size());
+			column_width[i] = max(column_width[i], column->size());
 		}
 	}
 }
 
-string ParsedTable::formatRow(vector<string> data)
+string ParsedTable::FormatRow(const vector<string> data)
 {
 	string result("");
 	int i = 0;
 	for (auto cell = data.begin(); cell != data.end(); cell++, i++) {
 		string formattedCell(*cell);
 
-		while (formattedCell.size() < columnWidth[i]) 
+		while (formattedCell.size() < column_width[i]) 
 			formattedCell += " ";
 
 		result += formattedCell + "|";
@@ -69,11 +69,11 @@ string ParsedTable::formatRow(vector<string> data)
 	return result;
 }
 
-string ParsedTable::separateHeader()
+string ParsedTable::SeparateHeader()
 {
 	string result("");
 
-	for (auto it = columnWidth.begin(); it != columnWidth.end(); it++) {
+	for (auto it = column_width.begin(); it != column_width.end(); it++) {
 		for (size_t i = 0; i < *it; i++)
 			result += "-";
 

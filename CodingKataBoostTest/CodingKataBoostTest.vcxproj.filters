@@ -29,13 +29,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TabelliereTest.cpp">
+    <ClCompile Include="fizz_buzz_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FizzBuzzTest.cpp">
+    <ClCompile Include="from_roman_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FromRomanTest.cpp">
+    <ClCompile Include="tabelliere_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

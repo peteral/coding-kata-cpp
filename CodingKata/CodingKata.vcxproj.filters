@@ -21,7 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CodingKata.h">
+    <ClInclude Include="coding_kata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClCompile Include="tabelliere.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fizzBuzz.cpp">
+    <ClCompile Include="fizz_buzz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fromRoman.cpp">
+    <ClCompile Include="from_roman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

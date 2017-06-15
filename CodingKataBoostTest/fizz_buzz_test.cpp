@@ -1,6 +1,6 @@
       
 #include "stdafx.h"
-#include "..\CodingKata\CodingKata.h"
+#include "..\CodingKata\coding_kata.h"
 
 namespace bdata = boost::unit_test::data;
 using namespace std;
@@ -8,15 +8,15 @@ using namespace std;
 namespace fizzbuzz {
 	BOOST_AUTO_TEST_CASE(Returns100Entries)
 	{
-		BOOST_TEST((size_t)100 == fizzBuzz().size());
+		BOOST_TEST((size_t)100 == FizzBuzz().size());
 	}
 
 	typedef struct {
 		int index;
 		string expected;
-	} dataset_entry;
+	} DatasetEntry;
 
-	vector<dataset_entry> entries{
+	vector<DatasetEntry> entries{
 			{ 2, "Fizz" },
 			{ 5, "Fizz" },
 			{ 4, "Buzz" },
@@ -29,6 +29,6 @@ namespace fizzbuzz {
 		bdata::xrange(entries.size()),
 		index)
 	{
-		BOOST_TEST(entries[index].expected == fizzBuzz()[entries[index].index]);
+		BOOST_TEST(entries[index].expected == FizzBuzz()[entries[index].index]);
 	}
 }

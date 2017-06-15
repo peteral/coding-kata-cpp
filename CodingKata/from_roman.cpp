@@ -55,9 +55,9 @@ void AssertValidSemantics(const string::const_iterator it, const string::const_i
 	set<char> valid = valid_predecessors[*it];
 	if (valid.count(*(it - 1)) == 0) {
 		string message = "Invalid character [";
-		message += *it;
-		message += "] before [";
 		message += *(it - 1);
+		message += "] before [";
+		message += *it;
 		message += "]";
 
 		throw RomanException(message);

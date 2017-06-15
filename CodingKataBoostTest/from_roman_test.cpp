@@ -43,7 +43,7 @@ namespace roman {
 
 	bool CorrectSemanticsErrorMessage(const RomanException& ex)
 	{
-		BOOST_CHECK_EQUAL(ex.message, "Invalid character [C] before [I]");
+		BOOST_CHECK_EQUAL(ex.message, "Invalid character [I] before [C]");
 		return true;
 	}
 

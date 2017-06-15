@@ -41,5 +41,8 @@
     <ClCompile Include="from_roman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lucky_numbers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

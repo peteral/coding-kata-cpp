@@ -35,3 +35,5 @@ public:
 };
 
 int CODINGKATA_API FromRomanNumerals(const string roman);
+
+vector<int> CODINGKATA_API LuckyNumbers(int from, int to);

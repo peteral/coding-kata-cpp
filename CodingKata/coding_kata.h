@@ -10,7 +10,10 @@
 #define CODINGKATA_API __declspec(dllimport)
 #endif
 
+#include "stdafx.h"
+
 using namespace std;
+using namespace boost::posix_time;
 
 class CODINGKATA_API ParsedTable
 {
@@ -39,3 +42,5 @@ int CODINGKATA_API FromRomanNumerals(const string roman);
 vector<int> CODINGKATA_API LuckyNumbers(int from, int to);
 
 int CODINGKATA_API GetLinesOfCode(const string source);
+
+ptime CODINGKATA_API FollowupTime(ptime now, string email);

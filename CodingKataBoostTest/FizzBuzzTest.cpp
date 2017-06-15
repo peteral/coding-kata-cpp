@@ -2,32 +2,31 @@
 #include "stdafx.h"
 #include "..\CodingKata\CodingKata.h"
 
+namespace bdata = boost::unit_test::data;
+using namespace std;
+
 BOOST_AUTO_TEST_CASE(Returns100Entries)
 {
-	BOOST_REQUIRE((size_t)100 == fizzBuzz().size());
+	BOOST_TEST((size_t)100 == fizzBuzz().size());
 }
 
-BOOST_AUTO_TEST_CASE(Entry3IsFizz)
-{
-	BOOST_REQUIRE(string("Fizz") == fizzBuzz()[2]);
-}
+typedef struct {
+	int index;
+	string expected;
+} dataset_entry;
 
-BOOST_AUTO_TEST_CASE(Entry6IsFizz)
-{
-	BOOST_REQUIRE(string("Fizz") == fizzBuzz()[5]);
-}
+vector<dataset_entry> entries {
+		{ 2, "Fizz" },
+		{ 5, "Fizz" },
+		{ 4, "Buzz" },
+		{ 9, "Buzz" },
+		{ 14, "FizzBuzz" },
+		{ 1, "2" }
+	};
 
-BOOST_AUTO_TEST_CASE(Entry5IsBuzz)
+BOOST_DATA_TEST_CASE(CheckEntries, 
+	bdata::xrange(entries.size()),
+	index) 
 {
-	BOOST_REQUIRE(string("Buzz") == fizzBuzz()[4]);
-}
-
-BOOST_AUTO_TEST_CASE(Entry10IsBuzz)
-{
-	BOOST_REQUIRE(string("Buzz") == fizzBuzz()[9]);
-}
-
-BOOST_AUTO_TEST_CASE(Entry15IsFizzBuzz)
-{
-	BOOST_REQUIRE(string("FizzBuzz") == fizzBuzz()[14]);
+	BOOST_TEST(entries[index].expected == fizzBuzz()[entries[index].index]);
 }

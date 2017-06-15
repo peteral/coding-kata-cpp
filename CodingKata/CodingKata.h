@@ -27,3 +27,5 @@ public:
 };
 
 vector<string> CODINGKATA_API fizzBuzz();
+
+int CODINGKATA_API fromRomanNumerals(string roman);

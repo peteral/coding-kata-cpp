@@ -21,3 +21,4 @@
 #include <boost\lambda\lambda.hpp>
 #include <boost/tokenizer.hpp>
 #include <memory>
+#include <map>

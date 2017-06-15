@@ -35,6 +35,9 @@
     <ClCompile Include="FizzBuzzTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FromRomanTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="boost.runsettings">

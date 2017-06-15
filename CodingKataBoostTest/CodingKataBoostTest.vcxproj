@@ -162,6 +162,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="loc_test.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="lucky_numbers_test.cpp">
       <SubType>
       </SubType>

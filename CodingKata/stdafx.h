@@ -23,3 +23,6 @@
 #include <memory>
 #include <map>
 #include <set>
+#include <sstream>
+#include <boost/algorithm/string.hpp>
+#include <regex>

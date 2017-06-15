@@ -28,4 +28,10 @@ public:
 
 vector<string> CODINGKATA_API fizzBuzz();
 
+class CODINGKATA_API roman_exception {
+public:
+	roman_exception(string m) { message = m; };
+	string message;
+};
+
 int CODINGKATA_API fromRomanNumerals(string roman);

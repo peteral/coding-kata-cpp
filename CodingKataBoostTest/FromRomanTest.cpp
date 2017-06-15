@@ -3,6 +3,7 @@
 #include "..\CodingKata\CodingKata.h"
 
 using namespace std;
+
 namespace bdata = boost::unit_test::data;
 
 namespace roman {
@@ -27,5 +28,27 @@ namespace roman {
 		index)
 	{
 		BOOST_TEST(entries[index].arabic == fromRomanNumerals(entries[index].roman));
+	}
+
+	bool correctSyntaxErrorMessage(const roman_exception& ex)
+	{
+		BOOST_CHECK_EQUAL(ex.message, "Invalid character: [ ]");
+		return true;
+	}
+
+	BOOST_AUTO_TEST_CASE(SyntaxError)
+	{
+		BOOST_CHECK_EXCEPTION(fromRomanNumerals("I X"), roman_exception, correctSyntaxErrorMessage);
+	}
+
+	bool correctSemanticsErrorMessage(const roman_exception& ex)
+	{
+		BOOST_CHECK_EQUAL(ex.message, "Invalid character [C] before [I]");
+		return true;
+	}
+
+	BOOST_AUTO_TEST_CASE(SemanticsError)
+	{
+		BOOST_CHECK_EXCEPTION(fromRomanNumerals("IC"), roman_exception, correctSemanticsErrorMessage);
 	}
 }

@@ -50,6 +50,9 @@
     <ClCompile Include="mul_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bounded_queue_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="boost.runsettings">

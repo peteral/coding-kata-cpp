@@ -28,3 +28,6 @@
 #include <regex>
 #include "boost/date_time/posix_time/posix_time.hpp"
 #include <tuple>
+#include <queue>
+#include <condition_variable>
+#include <mutex>

@@ -151,6 +151,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bounded_queue_test.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="fizz_buzz_test.cpp">
       <SubType>
       </SubType>

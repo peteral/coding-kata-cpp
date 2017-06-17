@@ -12,12 +12,7 @@ namespace fizzbuzz {
 		BOOST_TEST((size_t)100 == FizzBuzz().size());
 	}
 
-	typedef struct {
-		int index;
-		string expected;
-	} DatasetEntry;
-
-	vector<DatasetEntry> entries{
+	vector<tuple<int, string>> entries{
 			{ 2, "Fizz" },
 			{ 5, "Fizz" },
 			{ 4, "Buzz" },
@@ -30,6 +25,6 @@ namespace fizzbuzz {
 		bdata::xrange(entries.size()),
 		index)
 	{
-		BOOST_TEST(entries[index].expected == FizzBuzz()[entries[index].index]);
+		BOOST_TEST(get<1>(entries[index]) == FizzBuzz()[get<0>(entries[index])]);
 	}
 }

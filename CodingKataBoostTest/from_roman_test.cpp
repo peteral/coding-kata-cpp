@@ -8,12 +8,8 @@ using namespace codingkata;
 namespace bdata = boost::unit_test::data;
 
 namespace roman {
-	typedef struct {
-		int arabic;
-		string roman;
-	} DatasetEntries;
 
-	vector<DatasetEntries> entries{
+	vector<tuple<int, string>> entries{
 		{ 1, "I" },
 		{ 2, "II" },
 		{ 4, "IV" },
@@ -28,7 +24,7 @@ namespace roman {
 		bdata::xrange(entries.size()),
 		index)
 	{
-		BOOST_TEST(entries[index].arabic == FromRomanNumerals(entries[index].roman));
+		BOOST_TEST(get<0>(entries[index]) == FromRomanNumerals(get<1>(entries[index])));
 	}
 
 	bool CorrectSyntaxErrorMessage(const RomanException& ex)

@@ -14,7 +14,7 @@ namespace lucky {
 		vector<int> expected;
 	} DatasetEntries;
 
-	vector<DatasetEntries> entries{
+	vector<tuple<int, int, vector<int>>> entries{
 		{ 1, 1, { 1 } },
 		{ 1, 10, { 1 , 10} },
 		{ 10, 20, { 10, 13 } },
@@ -24,10 +24,13 @@ namespace lucky {
 		bdata::xrange(entries.size()),
 		index)
 	{
-		vector<int> result = LuckyNumbers(entries[index].from, entries[index].to);
+		int from = get<0>(entries[index]);
+		int to = get<1>(entries[index]);
+		vector<int> expected = get<2>(entries[index]);
+		vector<int> result = LuckyNumbers(from, to);
 
 		BOOST_CHECK_EQUAL_COLLECTIONS(
-			entries[index].expected.begin(), entries[index].expected.end(),
+			expected.begin(), expected.end(),
 			result.begin(), result.end()
 			);
 	}

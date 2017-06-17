@@ -47,4 +47,6 @@ namespace codingkata {
 	ptime CODINGKATA_API FollowupTime(ptime now, string email);
 
 	string CODINGKATA_API Rot13(string input);
+
+	int CODINGKATA_API Mul(int x, int y);
 }

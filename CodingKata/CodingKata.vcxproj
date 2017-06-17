@@ -156,6 +156,7 @@
     <ClCompile Include="loc.cpp" />
     <ClCompile Include="lucky_numbers.cpp" />
     <ClCompile Include="mail_followup.cpp" />
+    <ClCompile Include="rot13.cpp" />
     <ClCompile Include="tabelliere.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>

@@ -15,32 +15,36 @@
 using namespace std;
 using namespace boost::posix_time;
 
-class CODINGKATA_API ParsedTable
-{
-private:
-	vector<vector<string>*> rows;
-	vector<size_t> column_width;
-	string SeparateHeader();
-	string FormatRow(const vector<string>);
-public:
-	ParsedTable(const vector<string>);
-	~ParsedTable();
+namespace codingkata {
+	class CODINGKATA_API ParsedTable
+	{
+	private:
+		vector<vector<string>*> rows;
+		vector<size_t> column_width;
+		string SeparateHeader();
+		string FormatRow(const vector<string>);
+	public:
+		ParsedTable(const vector<string>);
+		~ParsedTable();
 
-	vector<string> GetResult();
-};
+		vector<string> GetResult();
+	};
 
-vector<string> CODINGKATA_API FizzBuzz();
+	vector<string> CODINGKATA_API FizzBuzz();
 
-class CODINGKATA_API RomanException {
-public:
-	RomanException(const string m) { message = m; };
-	string message;
-};
+	class CODINGKATA_API RomanException {
+	public:
+		RomanException(const string m) { message = m; };
+		string message;
+	};
 
-int CODINGKATA_API FromRomanNumerals(const string roman);
+	int CODINGKATA_API FromRomanNumerals(const string roman);
 
-vector<int> CODINGKATA_API LuckyNumbers(int from, int to);
+	vector<int> CODINGKATA_API LuckyNumbers(int from, int to);
 
-int CODINGKATA_API GetLinesOfCode(const string source);
+	int CODINGKATA_API GetLinesOfCode(const string source);
 
-ptime CODINGKATA_API FollowupTime(ptime now, string email);
+	ptime CODINGKATA_API FollowupTime(ptime now, string email);
+
+	string CODINGKATA_API Rot13(string input);
+}

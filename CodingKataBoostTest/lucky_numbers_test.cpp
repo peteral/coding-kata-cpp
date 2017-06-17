@@ -2,7 +2,8 @@
 #include "stdafx.h"
 #include "..\CodingKata\coding_kata.h"
 
-using namespace std;
+using namespace std; 
+using namespace codingkata;
 
 namespace bdata = boost::unit_test::data;
 

@@ -4,6 +4,7 @@
 
 namespace bdata = boost::unit_test::data;
 using namespace std;
+using namespace codingkata;
 
 namespace fizzbuzz {
 	BOOST_AUTO_TEST_CASE(Returns100Entries)

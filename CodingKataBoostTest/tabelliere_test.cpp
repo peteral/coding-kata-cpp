@@ -3,6 +3,8 @@
 #include "..\CodingKata\coding_kata.h"
 #include <iostream>
 
+using namespace codingkata;
+
 BOOST_AUTO_TEST_CASE(HeaderOnly)
 {
 	ParsedTable table({ "Name;Strasse;Ort;Alter" });

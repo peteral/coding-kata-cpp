@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #include "../CodingKata/coding_kata.h"
 
+using namespace codingkata;
+
 BOOST_AUTO_TEST_CASE( LocNoComments )  
 {
 	BOOST_CHECK_EQUAL(7, GetLinesOfCode(

@@ -44,6 +44,9 @@
     <ClCompile Include="mail_followup_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rot13_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="boost.runsettings">
